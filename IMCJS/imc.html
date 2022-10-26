@@ -1,0 +1,84 @@
+<!Doctype html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<link rel="stylesheet" href="estilo.css">
+<head>
+    <meta charset="utf-8">
+    <title>Prova </title>
+</head>
+<body>
+    <form id="formulario">
+    
+    	<h1>Calculo IMC</h1>
+		<h7>!!!Coloque o peso com ponto nao com virgula!!!</h7>
+    	<p>
+			<label for="kilos">Kilos:</label>
+			<input name="kilos" type="text" />
+		</p>
+        
+		
+		<p>
+			<label for="metros">Metros:</label>
+			<input name="metros" type="text" />
+		</p>
+       
+    
+        <p>
+			<label for="imc">Imc:</label>
+        	<input name="imc" type="text" disabled="disabled" />	
+		</p>
+            
+        <h3>
+			<a href="#" onclick="calcular();">Calcular</a>
+		</h3>
+
+    </form>
+	<script type="text/javascript">
+        function calcular(){
+    		
+    		var formulario = document.getElementById("formulario");	
+    		
+    		
+    		var kilos = +formulario.kilos.value;
+
+    		var metros = +formulario.metros.value;
+
+    		
+     		
+    		var altura = metros;
+    		 
+    		
+    		var imc = kilos / (altura * altura);
+    		
+    		formulario.imc.value = imc.toFixed(2);
+    		
+    		if(imc < 18.5)
+    		{
+    			alert('Abaixo do peso');
+    		} 
+    		else if(imc >18.5 && imc <= 25)
+    		{
+    			alert("Peso Normal");
+    		}
+    		else if(imc >25 && imc <= 29.9)
+    		{
+    			alert("Sobrepeso");
+    		}
+    		else if(imc >30 && imc <= 34.9)
+    		{
+    			alert("Obesidade Grau 1");
+    		}
+    		else if(imc >35 && imc <= 39.9)
+    		{
+    			alert("Obesidade Grau 2");
+    		}
+    		else if(imc >40 && imc <= 100)
+    		{
+    			alert("Obesidade Grau 3");
+    		}
+    		
+    	}
+		
+    </script>
+</body>
+</html
